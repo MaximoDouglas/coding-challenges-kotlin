@@ -11,6 +11,6 @@ fun Array<Int>.insertionSort() {
             leftHandIndex--
         }
 
-        this[leftHandIndex.inc()] = key // .inc() because the while will make one extra decrease ate its end
+        this[leftHandIndex.inc()] = key // .inc() because the while will make one extra decrease at its end
     }
 }
