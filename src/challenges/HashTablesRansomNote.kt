@@ -1,7 +1,6 @@
 package challenges.challenges
 
-// https://www.hackerrank.com/challenges/ctci-ransom-note/problem?h_l=interview&isFullScreen=false&
-// playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=dictionaries-hashmaps
+// https://www.hackerrank.com/challenges/ctci-ransom-note/problem
 
 fun checkMagazine(magazine: Array<String>, note: Array<String>): String {
     if (magazine.size >= note.size) {
