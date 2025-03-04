@@ -1,37 +1,41 @@
 package challenges.algorithms.sorting
 
 fun mergeSort(array: Array<Int>, p: Int = 0, r: Int = array.size.dec()): Array<Int> {
-    if (array.isEmpty()) {
+    if (p >= r) {
         return array
     }
 
-    if (p == r) {
-        return arrayOf(array[p])
-    }
-
     val q = (r.plus(p).floorDiv(2))
-    return merge(mergeSort(array, p, q), mergeSort(array, q+1, r))
+
+    mergeSort(array, p, q)
+    mergeSort(array, q+1, r)
+
+    return merge(array, p, q, r)
 }
 
-private fun merge(arrayLeft: Array<Int>, arrayRight: Array<Int>): Array<Int> {
-    val mergedArray = mutableListOf<Int>()
-
+private fun merge(array: Array<Int>, p: Int, q: Int, r: Int): Array<Int> {
     var i = 0
     var j = 0
+    var k = p
+
+    val arrayLeft = array.sliceArray(p..q)
+    val arrayRight = array.sliceArray(q.inc()..r)
 
     while (i < arrayLeft.size) {
         while (j < arrayRight.size && arrayRight[j] <= arrayLeft[i]) {
-            mergedArray.add(arrayRight[j])
+            array[k] = arrayRight[j]
+            k++
             j++
         }
 
-        mergedArray.add(arrayLeft[i])
+        array[k] = arrayLeft[i]
+        k++
         i++
 
         if (i == arrayLeft.size && j < arrayRight.size) {
-            mergedArray.addAll(arrayRight.slice(j until arrayRight.size))
+            arrayRight.copyInto(array, destinationOffset = k, startIndex = j)
         }
     }
 
-    return mergedArray.toTypedArray()
+    return array
 }
