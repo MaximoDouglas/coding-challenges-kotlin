@@ -10,10 +10,12 @@ fun mergeSort(array: Array<Int>, p: Int = 0, r: Int = array.size.dec()): Array<I
     mergeSort(array, p, q)
     mergeSort(array, q+1, r)
 
-    return merge(array, p, q, r)
+    merge(array, p, q, r)
+
+    return array
 }
 
-private fun merge(array: Array<Int>, p: Int, q: Int, r: Int): Array<Int> {
+private fun merge(array: Array<Int>, p: Int, q: Int, r: Int) {
     var i = 0
     var j = 0
     var k = p
@@ -36,6 +38,4 @@ private fun merge(array: Array<Int>, p: Int, q: Int, r: Int): Array<Int> {
             arrayRight.copyInto(array, destinationOffset = k, startIndex = j)
         }
     }
-
-    return array
 }
