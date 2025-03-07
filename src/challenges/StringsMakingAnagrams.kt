@@ -1,6 +1,6 @@
 package challenges.challenges
 
-// https://www.hackerrank.com/challenges/ctci-making-anagrams/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=strings
+// https://www.hackerrank.com/challenges/ctci-making-anagrams/
 
 fun makeAnagram(a: String, b: String): Int {
     val mapLettersA = mutableMapOf<Char, Int>()

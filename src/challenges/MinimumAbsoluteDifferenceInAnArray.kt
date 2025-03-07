@@ -1,6 +1,6 @@
 package challenges.challenges
 
-// https://www.hackerrank.com/challenges/minimum-absolute-difference-in-an-array/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=greedy-algorithms
+// https://www.hackerrank.com/challenges/minimum-absolute-difference-in-an-array
 
 fun minimumAbsoluteDifference(arr: Array<Int>): Int {
     arr.sort()
