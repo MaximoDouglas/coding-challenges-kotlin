@@ -30,13 +30,12 @@ private fun inversionCounter(array: Array<Int>, start: Int = 0, end: Int = array
 
 private fun mergeAndCount(array: Array<Int>, start: Int, middle: Int, end: Int): Int {
     var inversionCounter = 0
-
-    val leftArray = array.sliceArray(start..middle)
-    val rightArray = array.sliceArray(middle.inc()..end)
-
     var i = 0
     var j = 0
     var navigator = start
+
+    val leftArray = array.sliceArray(start..middle)
+    val rightArray = array.sliceArray(middle.inc()..end)
 
     while (i < leftArray.size) {
         while (j < rightArray.size && rightArray[j] < leftArray[i]) {
@@ -52,10 +51,7 @@ private fun mergeAndCount(array: Array<Int>, start: Int, middle: Int, end: Int):
     }
 
     if (j < rightArray.size) {
-        for (k in j until rightArray.size) {
-            array[navigator] = rightArray[k]
-            navigator++
-        }
+        rightArray.copyInto(array, destinationOffset = navigator, startIndex = j)
     }
 
     return inversionCounter
