@@ -14,9 +14,9 @@ class MergeSortTest {
         val originalArray = arrayOf(5, 4, 3, 2, 1)
         val expectedArray = arrayOf(1, 2, 3, 4, 5)
 
-        val result = mergeSort(originalArray)
+        originalArray.mergeSort()
 
-        assertContentEquals(expectedArray, result)
+        assertContentEquals(expectedArray, originalArray)
     }
 
     @Test
@@ -24,9 +24,9 @@ class MergeSortTest {
         val originalArray = arrayOf<Int>()
         val expectedArray = arrayOf<Int>()
 
-        val result = mergeSort(originalArray)
+        originalArray.mergeSort()
 
-        assertContentEquals(expectedArray, result)
+        assertContentEquals(expectedArray, originalArray)
     }
 
     @Test
@@ -34,9 +34,9 @@ class MergeSortTest {
         val originalArray = arrayOf(1, 2, 3, 4, 5)
         val expectedArray = arrayOf(1, 2, 3, 4, 5)
 
-        val result = mergeSort(originalArray)
+        originalArray.mergeSort()
 
-        assertContentEquals(expectedArray, result)
+        assertContentEquals(expectedArray, originalArray)
     }
 
     @Test
@@ -44,9 +44,9 @@ class MergeSortTest {
         val originalArray = arrayOf(5, 5, 4, 4, 3, 3, 2, 2, 1, 1)
         val expectedArray = arrayOf(1, 1, 2, 2, 3, 3, 4, 4, 5, 5)
 
-        val result = mergeSort(originalArray)
+        originalArray.mergeSort()
 
-        assertContentEquals(expectedArray, result)
+        assertContentEquals(expectedArray, originalArray)
     }
 
 }

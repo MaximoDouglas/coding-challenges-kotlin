@@ -1,18 +1,16 @@
 package challenges.algorithms.sorting
 
-fun mergeSort(array: Array<Int>, p: Int = 0, r: Int = array.size.dec()): Array<Int> {
+fun Array<Int>.mergeSort(p: Int = 0, r: Int = this.size.dec()) {
     if (p >= r) {
-        return array
+        return
     }
 
     val q = (r.plus(p).floorDiv(2))
 
-    mergeSort(array, p, q)
-    mergeSort(array, q+1, r)
+    mergeSort(p, q)
+    mergeSort(q + 1, r)
 
-    merge(array, p, q, r)
-
-    return array
+    merge(this, p, q, r)
 }
 
 private fun merge(array: Array<Int>, p: Int, q: Int, r: Int) {
