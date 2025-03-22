@@ -2,7 +2,6 @@ package challenges.challenges
 
 // https://www.hackerrank.com/challenges/luck-balance
 
-
 fun luckBalance(k: Int, contests: Array<Array<Int>>): Int {
     val orderedContests = contests.sortedByDescending { it[0] }
 
