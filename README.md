@@ -5,7 +5,7 @@ to online DSA coding challenges and my implementations of well known algorithms;
 
 All implementations are covered by unit tests written with JUnit.
 
-## Challenges
+## Challenges 
 
 - [AlternatingCharacters](src/challenges/AlternatingCharacters.kt)
 - [BalancedBrackets](src/challenges/BalancedBrackets.kt)
